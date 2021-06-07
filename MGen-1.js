@@ -50,19 +50,17 @@ const actionRandomizer = () => {
     }
 };
 
+const action = actionRandomizer();
+
 //User Input - got from Node.dev
-const readline = require('readline').createInterface({
+const readline = require("readline");
+const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-  });
+});
 
-  const awaitName = async () => {
-      //finalize code adding new message at question
-    const username = await readline.question(`What's your name? \n`, name => {
-        readline.close()
-      });
-      return username;
-  };
+rl.question("What is your name ? ", function(name) {
 
-
-
+    console.log(`${name}${action}${npc}`);
+    rl.close();
+});
