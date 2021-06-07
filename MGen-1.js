@@ -26,6 +26,29 @@ const npcName = () => {
 const npc = npcName();
 
 //Randomize action
+const actionRandomizer = () => {
+    const actionSelector = Math.floor(Math.random() * 6);
+    switch(actionSelector){
+        case 1: 
+            return ' got killed by ';
+        break;
+        case 2:
+            return ' run away from ';
+        break;
+        case 3:
+            return ' inflicted small damage to ';
+        break;
+        case 4: 
+            return ' inflicted heavy damage to ';;
+        break;
+        case 5:
+            return ' got crippled from ';
+        break;
+        default:
+            return ' insta-killed ';
+        break;
+    }
+};
 
 //User Input - got from Node.dev
 const readline = require('readline').createInterface({
@@ -41,5 +64,5 @@ const readline = require('readline').createInterface({
       return username;
   };
 
-//User inputs actio
+
 
